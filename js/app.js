@@ -68,12 +68,12 @@ function obtenerImagen(nombre) {
                     let mensaje = "Imagen no disponible para el pokemon " + nombre
                     let htmlNombre = `<h3>${mensaje} </h3>`;
                     //muestra el resultado de la generación de pokemon
-                    document.getElementById('resultado').innerHTML = htmlNombre;
+                    document.getElementById('resultadoImg').innerHTML = htmlNombre;
 
                } else {
-                    let htmlNombre = `<img src="${contenido.sprites.other['official-artwork'].front_default}"/>`;
+                    let htmlNombre = `<img width="200px" src="${contenido.sprites.other['official-artwork'].front_default}"/>`;
                     //muestra el resultado de la generación de pokemon
-                    document.getElementById('resultado').innerHTML = htmlNombre;
+                    document.getElementById('resultadoImg').innerHTML = htmlNombre;
 
                }
 
