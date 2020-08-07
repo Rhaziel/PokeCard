@@ -4,57 +4,35 @@ document.querySelector('#generar-nombre').addEventListener('submit', cargarNombr
 function cargarNombres(e) {
      e.preventDefault();
 
-     console.log('Si!');
      //Leer las variables
-     /*const origen = document.getElementById('origen');
-     const origenSeleccionado = origen.options[origen.selectedIndex].value;
-
-     const genero = document.getElementById('genero');
-     const generoSeleccionado = genero.options[genero.selectedIndex].value;
-     */
+     const tipo = document.getElementById('tipo');
+     const tipoSeleccionado = tipo.options[tipo.selectedIndex].value;
+     /*
      const cantidad = document.getElementById('numero1').value;
      const inicial = document.getElementById('numero2').value;
-
-     console.log(cantidad);
-
+     */
      let url = '';
-     url += 'https://pokeapi.co/api/v2/pokemon?limit='+cantidad+'&offset='+inicial;
-     //Si hay origen agregarlo a la URL
-    /* if (origenSeleccionado !== '') {
-          url += `region=${origenSeleccionado}&`;
+     url += 'https://pokeapi.co/api/v2/';
+     
+     if (tipoSeleccionado !== '') {
+          url += `type/${tipoSeleccionado}`
      }
-     //Si hay un genero agregarlo a la url
-     if (generoSeleccionado !== '') {
-          url += `gender=${generoSeleccionado}&`;
-     }
-     //Si hay una cantidad agregarlo a la URL
-     if (cantidad !== '') {
-          url += `amount=${cantidad}&`;
-     }
-     console.log(url);*/
      const xhr = new XMLHttpRequest();
 
      xhr.open('GET', url, true)
 
-     xhr.onload = function(){
-          if(this.status === 200){
-              
-               const contenido = JSON.parse(this.responseText)
-               
-               let htmlNombres = '<h2> Pokemones: </h2>'
+     xhr.onload = function () {
+          if (this.status === 200) {
+               const contenido = JSON.parse(this.responseText);
+               //obtiene un número random para el arreglo de pokemones
+               const num = (Math.floor(Math.random() * (contenido.pokemon.length - 0)) + 0) - 1;
 
-               htmlNombres += '<ul class="lista">';
-               console.log(contenido.results)
-               contenido.results.forEach( function(elem){
-                    console.log(elem.name)
-                    htmlNombres += `<li> ${elem.name}`;
-               })
-
-               htmlNombres += '</ul>'
-
-               document.getElementById('resultado').innerHTML = htmlNombres;
+               let htmlNombre = '<h2> Pokemon: </h2>';
+               //agrega el nombre del pokemon aleatorio a una etiqueta html
+               htmlNombre += `<li>${contenido.pokemon[num].pokemon.name}</ul>`;
+               //muestra el resultado de la generación de pokemon
+               document.getElementById('resultado').innerHTML = htmlNombre;
           }
      }
-
-     xhr.send()
+     xhr.send();
 }
