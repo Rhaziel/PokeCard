@@ -1,13 +1,13 @@
 body {
-    background: #56CCF2; 
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
-    background: linear-gradient(to right, #2F80ED, #56CCF2); 
+    background-image: url("http://happyapple.us/downloads/Evee_1920x1200.png"); 
+    /*background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
+    background: linear-gradient(to right, #2F80ED, #56CCF2); */
 }
 .contenido {
     margin-top: 40px;
 }
 h1 {
-    color: white;
+    color: black;
     text-align: center;
     font-size: 34px;
 }
@@ -29,3 +29,13 @@ form {
 .lista li:last-child{
     margin:0;
 }
+
+.tipografia{
+    font-family: 'Press Start 2P', cursive;
+}
+
+.tipografia2{
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 35px;
+}
+
