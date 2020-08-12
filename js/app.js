@@ -1,5 +1,5 @@
 document.querySelector('#generar-nombre').addEventListener('submit', cargarNombres);
-const tiposPokemon = ['Normal', 'Lucha', 'Volador', 'Veneno', 'Tierra', 'Roca', 'Bicho', 'Fantasma', 'Acero', 'Fuego', 'Agua', 'Planta', 'Electrico', 'Psíquico', 'Hielo', 'Dragon', 'Siniestro', 'Hada'];
+const tiposPokemon = [{name:'Normal',color:'crema'}, {name:'Lucha',color:'anaranjado'}, {name:'Volador',color:'gris'}, {name:'Veneno',color:'lila'}, {name:'Tierra',color:'marron'}, {name:'Roca',color:'marronoscuro'}, {name:'Bicho',color:'verdeoscuro'}, {name:'Fantasma',color:'violetaoscuro'}, {name:'Acero',color:'verdeclaro'}, {name:'Fuego',color:'rojo'}, {name:'Agua',color:'azul'}, {name:'Planta',color:'verde'}, {name:'Electrico',color:'amarillo'}, {name:'Psíquico',color:'rosa'}, {name:'Hielo',color:'celeste'}, {name:'Dragon',color:'verdeagua'}, {name:'Siniestro',color:'negro'}, {name:'Hada',color:'fucsia'}];
 
 agregarOpciones();
 
@@ -37,7 +37,7 @@ function obtenerDatos(tipoSeleccionado) {
                //obtiene un número random para el arreglo de pokemones
                const num = (Math.floor(Math.random() * (contenido.pokemon.length - 0)) + 0) - 1;
 
-               let htmlNombre = '<h2> Pokemon: </h2>';
+               let htmlNombre = '<h2 class=tipografia2> Pokemon: </h2>';
                //agrega el nombre del pokemon aleatorio a una etiqueta html
                htmlNombre += `<li>${contenido.pokemon[num].pokemon.name}</ul>`;
                //muestra el resultado de la generación de pokemon
@@ -96,8 +96,8 @@ function agregarOpciones() {
 
           let opciones = document.createElement('option')
           opciones.setAttribute("value", index + 1);
-          opciones.setAttribute("class", "h3");
-          let contenido  = document.createTextNode(e);
+          opciones.setAttribute("class", e.color);
+          let contenido  = document.createTextNode(e.name);
           opciones.appendChild(contenido);
           document.getElementById('tipo').appendChild(opciones);
      })

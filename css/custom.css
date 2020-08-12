@@ -39,3 +39,81 @@ form {
     font-size: 35px;
 }
 
+.rojo{
+    background-color: crimson;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.amarillo{
+    background-color: gold;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.verde{
+    background-color: greenyellow;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.celeste{
+    background-color: lightblue;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.marron{
+    background-color: chocolate;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.anaranjado{
+    background-color: coral;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.azul{
+    background-color: deepskyblue;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.lila{
+    background-color: indigo;
+    font-family: 'Baloo Tamma 2', cursive;
+    color: seashell;
+}
+.negro{
+    background-color: black;
+    font-family: 'Baloo Tamma 2', cursive;
+    color: seashell;
+
+}
+.rosa{
+    background-color: deeppink;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.fucsia{
+    background-color: fuchsia;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.verdeoscuro{
+    background-color: green;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.verdeclaro{
+    background-color: lightgreen;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.verdeagua{
+    background-color: lightseagreen;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.gris{
+    background-color: lightsteelblue;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.violetaoscuro{
+    background-color: mediumslateblue;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.marronoscuro{
+    background-color: saddlebrown;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.crema{
+    background-color: pink;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.normal{
+    font-family: 'Baloo Tamma 2', cursive;
+}
