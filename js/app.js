@@ -1,4 +1,7 @@
 document.querySelector('#generar-nombre').addEventListener('submit', cargarNombres);
+const tiposPokemon = ['Normal', 'Lucha', 'Volador', 'Veneno', 'Tierra', 'Roca', 'Bicho', 'Fantasma', 'Acero', 'Fuego', 'Agua', 'Planta', 'Electrico', 'Psíquico', 'Hielo', 'Dragon', 'Siniestro', 'Hada'];
+
+agregarOpciones();
 
 //Llamado a Ajax e imprimir resultados
 function cargarNombres(e) {
@@ -11,7 +14,6 @@ function cargarNombres(e) {
      const cantidad = document.getElementById('numero1').value;
      const inicial = document.getElementById('numero2').value;
      */
-
 
      if (tipoSeleccionado !== '') {
           obtenerDatos(tipoSeleccionado);
@@ -40,7 +42,8 @@ function obtenerDatos(tipoSeleccionado) {
                htmlNombre += `<li>${contenido.pokemon[num].pokemon.name}</ul>`;
                //muestra el resultado de la generación de pokemon
                document.getElementById('resultado').innerHTML = htmlNombre;
-               obtenerImagen(contenido.pokemon[num].pokemon.name)
+               obtenerImagen(contenido.pokemon[num].pokemon.name);
+               obtenerAtributos();
           }
      }
      xhr.send();
@@ -81,6 +84,21 @@ function obtenerImagen(nombre) {
 
      }
      xhr.send();
+}
 
 
+
+function agregarOpciones() {
+     const select = document.getElementById('tipo')
+
+     tiposPokemon.forEach(function (e, index) {
+          //agregamos un elemento option como hijo de elem
+
+          let opciones = document.createElement('option')
+          opciones.setAttribute("value", index + 1);
+          opciones.setAttribute("class", "h3");
+          let contenido  = document.createTextNode(e);
+          opciones.appendChild(contenido);
+          document.getElementById('tipo').appendChild(opciones);
+     })
 }
